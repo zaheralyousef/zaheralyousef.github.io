@@ -1,0 +1,21 @@
+ul,
+li {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.panel {
+    background-color: #f9f9f9;
+    border: #ccc solid 1px;
+}
+
+li {
+    line-height: 0.8cm;
+}
+
+h5 {
+    margin: 10px 0;
+    padding: 5px;
+    background-color: #f4f4f4;
+}
