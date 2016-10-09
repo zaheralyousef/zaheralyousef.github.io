@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="aBookingApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="aBookingApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="aBookingApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="aBookingApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sham Booking</title>
+    <meta name="description" content="موقع حجز تذاكر">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Sham Booking">
+    <!-- Bootstrap Core CSS -->
+    <link href="dependencies/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="dependencies/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Plugin CSS -->
+    <link href="dependencies/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="dependencies/creative.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header navbar-right">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Sham Booking</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                     <a href="#contact">اتصل بنا</a>
+                        
+                    </li>
+                    <li>
+                        <a href="#booking">احجز تذكرتك</a>
+                    </li>
+                    <li>
+                        <a href="#services">خدماتنا</a>
+                    </li>
+                    <li>
+                       <a href="#about">من نحن</a>
+                    </li>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+    <div ng-view></div>
+    <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+    <script src="dependencies/angular.js"></script>
+    <script src="dependencies/angular-route.js"></script>
+    <script src="dependencies/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="dependencies/bootstrap/js/bootstrap.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="dependencies/scrollreveal.js"></script>
+    <script src="dependencies/magnific-popup/jquery.magnific-popup.js"></script>
+    <!-- Theme JavaScript -->
+    <script src="dependencies/creative.js"></script>
+    <script src="app.js"></script>
+    <script src="booking/booking.js"></script>
+    <script src="alsirafy/alsirafy.js"></script>
+    <script src="about/about.js"></script>
+    <script src="contact/contact.js"></script>
+    <script src="services/services.js"></script>
+</body>
+
+</html>
