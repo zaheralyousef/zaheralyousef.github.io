@@ -18,7 +18,7 @@ hr {
   max-width: 50px;
 }
 hr.light {
-  border-color: white;
+  border-color: #F05F40;
 }
 a {
   -webkit-transition: all 0.35s;
@@ -35,7 +35,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+label,
+input {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 p {
@@ -54,12 +56,12 @@ p {
   color: rgba(0, 0, 0, 0.7);
 }
 .section-padding {
-  padding: 110px 50px 50px 50px;
+  padding: 90px 50px 50px 50px;
 }
 
 .about-img {
-  padding-top: 50px;
-  width: 50%;
+  padding-top: 30px;
+  width: 60%;
   height: 35%;
 }
 aside {
@@ -238,7 +240,7 @@ aside {
 }
 .btn-default {
   color: #222222;
-  background-color: white;
+  background-color: #F05F40;
   border-color: white;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;

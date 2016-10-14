@@ -1,2 +1,104 @@
-<p>This is the partial for Control Panel</p>
-
+<div class="row" ng-controller="BookingCtrl">
+    <div class="col-lg-8 col-lg-offset-2 text-center">
+        <!-- Edit Contact Form -->
+        <form ng-submit="editFormSubmit()" ng-show="editFormShow">
+            <h3>Edit Contact</h3> Edit Form
+            <div class="row">
+                <div class="large-6">
+                    <label>Name:
+                        <input type="text" ng-model="name" placeholder="Contact Name" required />
+                    </label>
+                </div>
+                <div class="large-6">
+                    <label>Email:
+                        <input type="text" ng-model="email" placeholder="Contact Email" required />
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-6">
+                    <label>Company:
+                        <input type="text" ng-model="company" placeholder="Company Name" />
+                    </label>
+                </div>
+                <div class="large-6">
+                    <label>Work Phone:
+                        <input type="text" ng-model="work_phone" placeholder="Work Phone" />
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-6">
+                    <label>Mobile Phone:
+                        <input type="text" ng-model="mobile_phone" placeholder="Mobile Phone" />
+                    </label>
+                </div>
+                <div class="large-6">
+                    <label>Home Phone:
+                        <input type="text" ng-model="home_phone" placeholder="Home Phone" />
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-6">
+                    <label>Street Address:
+                        <input type="text" ng-model="street_address" placeholder="Street Address" />
+                    </label>
+                </div>
+                <div class="large-6">
+                    <label>City:
+                        <input type="text" ng-model="city" placeholder="City" />
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-6">
+                    <label>State:
+                        <input type="text" ng-model="state" placeholder="State" />
+                    </label>
+                </div>
+                <div class="large-6">
+                    <label>Zip Code:
+                        <input type="text" ng-model="zipcode" placeholder="Zip Code" />
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12">
+                    <input type="submit" value="Save" class="button" />
+                </div>
+            </div>
+        </form>
+        <!-- Main Form -->
+        <h3>Your Contacts ({{passengers.length}})</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th width="200px">Name</th>
+                    <th width="200px;">Company</th>
+                    <th width="25%;">Email</th>
+                    <th width="25%;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="passenger in passengers">
+                    <td><a ng-click="showContact(passenger)">{{passenger.name}}</a></td>
+                    <td>{{passenger.company}}</td>
+                    <td>{{passenger.email}}</td>
+                    <td><a class="button tiny" ng-click="showEditForm(passenger)">Edit</a>
+                        <a class="button tiny alert" ng-click="removeContact(passenger)">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        {{passenger}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="small-12 large-2">
+        <a class="button large" ng-click="showAddForm()" ng-hide="addFormShow">+</a>
+        <a class="button large" ng-click="hide()" ng-show="addFormShow">-</a>
+        <a class="button large" ng-click="hide()" ng-show="passengerShow">-</a>
+    </div>
+</div>
