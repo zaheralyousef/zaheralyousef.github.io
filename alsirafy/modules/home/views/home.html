@@ -1,0 +1,42 @@
+<h1>Home</h1>
+<p>You're logged in!!</p>
+<p><a href="#/login">Logout</a></a>
+</p>
+<div class="row" ng-controller="BookingAdminCtrl">
+    <div class="col-lg-10 col-lg-offset-1 text-center">
+        <h3>The Passengers: ({{passengers.length}})</h3>
+        <hr class="light">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Date</th>
+                    <th>Mobile</th>
+                    <th>E-mail</th>
+                    <th>Paied</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody style="overflow: auto;">
+                <tr ng-repeat="passenger in passengers | orderBy: passenger.bookDate ">
+                    <td>{{passenger.firstName + " " + passenger.lastName}}</td>
+                    <td>{{passenger.fromCity}}</td>
+                    <td>{{passenger.toCity}}</td>
+                    <td>{{passenger.travelDate}}</td>
+                    <td>{{passenger.mobilePhone}}</td>
+                    <td>{{passenger.email}}</td>
+                    <td>
+                        <input ng-if="passenger.paied" type="checkbox" ng-click="isPaied(passenger);" checked>
+                        <input ng-if="!passenger.paied" type="checkbox" ng-click="isPaied(passenger);" unchecked>
+                    </td>
+                    <td>
+                        <!-- <a class="btn btn-success" ng-click="showEditForm(passenger)">Edit</a> -->
+                        <a class="btn btn-danger" ng-click="removePassenger(passenger)"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

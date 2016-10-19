@@ -14,7 +14,6 @@ angular.module('aBookingApp', [
 	'ngRoute',
 	'firebase',
 	'aBookingApp.booking',
-	'aBookingApp.alsirafy',
 	'aBookingApp.about',
 	'aBookingApp.contact',
 	'aBookingApp.services'

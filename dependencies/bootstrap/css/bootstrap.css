@@ -2261,6 +2261,8 @@ th {
   text-align: left;
 }
 .table {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  text-align: left;
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;

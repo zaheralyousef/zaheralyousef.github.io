@@ -20,13 +20,16 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">From City:</label>
                 <div class="col-sm-8">
-                    <select class="form-control" ng-model="From">...</select>
+                    <input type="text" list="stations" class="form-control" ng-model="fromCity" placeholder="City Name" required />
+                    <datalist id="stations">
+                        <option ng-repeat="station in stations" value="{{station}}">
+                    </datalist>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">To City:</label>
                 <div class="col-sm-8">
-                    <select class="form-control" ng-model="To">...</select>
+                    <input type="text" list="stations" class="form-control" ng-model="toCity" placeholder="City Name" required />
                 </div>
             </div>
             <div class="form-group">
@@ -38,18 +41,24 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Mobile:</label>
                 <div class="col-sm-8">
-                    <input type="tel" class="form-control" ng-model="mobile_phone" placeholder="Mobile Phone" />
+                    <input type="tel" class="form-control" ng-model="mobilePhone" placeholder="Mobile Phone" required/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">E-mail:</label>
                 <div class="col-sm-8">
-                    <input type="email" class="form-control" ng-model="email" placeholder="Your E-mail" />
+                    <input type="email" class="form-control" ng-model="email" placeholder="Your E-mail" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Bank IBAN:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="bankIban" placeholder="IBAN That You Paied From" required/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-3 col-sm-offset-7">
-                    <button type="submit" class="page-scroll btn btn-default btn-xl sr-button">Book Now</button>
+                    <input type="submit" value="Book Now" class="btn btn-default btn-xl" />
                 </div>
             </div>
         </form>
