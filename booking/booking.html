@@ -1,24 +1,28 @@
 <div class="row" ng-controller="BookingCtrl">
-    <div class="col-lg-8 col-lg-offset-3 text-center">
-        <div data-alert ng-show="msg" class="bg-success">{{msg}}</div>
+    <div class="col-lg-4">
+        <h3 class="section-heading">How Does It Work?</h3>
+        <p>For one passenger, you need to transfer<span class="bank-account"> 8 euro</span> to our Bank Account:<br><span class="bank-account">Account Name: A Asirafy<br>IBAN: NL16 INGB 0702 7745 29<br></span> Fill you information in the next form. <br>Don't forget to send us your IBAN to make sure of your transfer.<br> Then we will send the ticket to your e-mail or your whatsapp.</p>
+        <p>For more information you can chat us via whatsapp on our number: +31 61 955 5774</p>
+    </div>
+    <div class="col-lg-6 col-lg-offset-1 div-border">
         <!-- Add Passenger Form -->
-        <form class="form-horizontal has-success" ng-submit="addFormSubmit()">
+        <form class="form-horizontal has-success text-center" ng-submit="addFormSubmit()">
             <h2 class="section-heading">Fill The Following Informations:</h2>
             <hr class="light">
             <div class="form-group">
-                <label class="col-sm-2 control-label">First Name:</label>
+                <label class="col-sm-3 control-label">First Name:</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" ng-model="firstName" placeholder="First Name" required />
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Last Name:</label>
+                <label class="col-sm-3 control-label">Last Name:</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" ng-model="lastName" placeholder="Last Name" required />
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">From City:</label>
+                <label class="col-sm-3 control-label">From City:</label>
                 <div class="col-sm-8">
                     <input type="text" list="stations" class="form-control" ng-model="fromCity" placeholder="City Name" required />
                     <datalist id="stations">
@@ -27,40 +31,41 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">To City:</label>
+                <label class="col-sm-3 control-label">To City:</label>
                 <div class="col-sm-8">
                     <input type="text" list="stations" class="form-control" ng-model="toCity" placeholder="City Name" required />
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Travel Date:</label>
+                <label class="col-sm-3 control-label">Travel Date:</label>
                 <div class="col-sm-8">
-                    <input type="date" class="form-control" ng-model="travelDate" required />
+                    <input type="date" class="form-control" ng-model="travelDate" required  />
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Mobile:</label>
-                <div class="col-sm-8">
-                    <input type="tel" class="form-control" ng-model="mobilePhone" placeholder="Mobile Phone" required/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">E-mail:</label>
-                <div class="col-sm-8">
-                    <input type="email" class="form-control" ng-model="email" placeholder="Your E-mail" required/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Bank IBAN:</label>
+                <label class="col-sm-3 control-label">Your IBAN:</label>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" ng-model="bankIban" placeholder="IBAN That You Paied From" required/>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-3 col-sm-offset-7">
+                <label class="col-sm-3 control-label">Mobile:</label>
+                <div class="col-sm-8">
+                    <input type="tel" class="form-control" ng-model="mobilePhone" placeholder="Mobile Number" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">E-mail:</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" ng-model="email" placeholder="Your E-mail" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 col-sm-offset-7">
                     <input type="submit" value="Book Now" class="btn btn-default btn-xl" />
                 </div>
             </div>
+            <div data-alert ng-show="msg" class="bg-success">{{msg}}</div>
         </form>
     </div>
 </div>

@@ -1,27 +1,28 @@
-<h1>Home</h1>
-<p>You're logged in!!</p>
-<p><a href="#/login">Logout</a></a>
-</p>
+<p>Welcome To Control Panel</p>
+<p><a href="#/login">Logout</a></a></p>
+
 <div class="row" ng-controller="BookingAdminCtrl">
-    <div class="col-lg-10 col-lg-offset-1 text-center">
-        <h3>The Passengers: ({{passengers.length}})</h3>
-        <hr class="light">
-        <table class="table table-striped">
+    <div class="col-lg-12 text-left">
+        <label>Search: <input ng-model="searchText"></label>
+        <br>
+        <table class="table table-default table-striped table-wrapper">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>From</th>
-                    <th>To</th>
-                    <th>Date</th>
-                    <th>Mobile</th>
-                    <th>E-mail</th>
-                    <th>Paied</th>
-                    <th>Action</th>
+                    <th><h5>First Name</h5></th>
+                    <th><h5>Last Name</h5></th>
+                    <th><h5>From</h5></th>
+                    <th><h5>To</h5></th>
+                    <th><h5>Travel Date</h5></th>
+                    <th><h5>Mobile</h5></th>
+                    <th><h5>E-mail</h5></th>
+                    <th><h5>Paied</h5></th>
+                    <th><h5>Done</h5></th>
                 </tr>
             </thead>
-            <tbody style="overflow: auto;">
-                <tr ng-repeat="passenger in passengers | orderBy: passenger.bookDate ">
-                    <td>{{passenger.firstName + " " + passenger.lastName}}</td>
+            <tbody>
+                <tr ng-repeat="passenger in passengers | orderBy: 'bookDate' | filter:searchText">
+                    <td>{{passenger.firstName}}</td>
+                    <td>{{passenger.lastName}}</td>
                     <td>{{passenger.fromCity}}</td>
                     <td>{{passenger.toCity}}</td>
                     <td>{{passenger.travelDate}}</td>
@@ -33,7 +34,9 @@
                     </td>
                     <td>
                         <!-- <a class="btn btn-success" ng-click="showEditForm(passenger)">Edit</a> -->
-                        <a class="btn btn-danger" ng-click="removePassenger(passenger)"><i class="fa fa-trash"></i></a>
+                        <!-- <a class="btn btn-danger" ng-click="removePassenger(passenger)"><i class="fa fa-trash"></i></a> -->
+                        <input ng-if="passenger.done" type="checkbox" ng-click="isDone(passenger);" checked>
+                        <input ng-if="!passenger.done" type="checkbox" ng-click="isDone(passenger);" unchecked>
                     </td>
                 </tr>
             </tbody>

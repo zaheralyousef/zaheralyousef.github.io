@@ -17,15 +17,18 @@ angular.module('aBookingApp.booking', ['ngRoute', 'firebase'])
 	// Add Form Submit
 	$scope.addFormSubmit = function() {
 		
-		var firstName = $scope.firstName ? $scope.firstName : null;
-		var lastName = $scope.lastName ? $scope.lastName : null;
-		var fromCity = $scope.fromCity ? $scope.fromCity : null;
-		var toCity = $scope.toCity ? $scope.toCity : null;
-		var travelDate = $scope.travelDate ? $scope.travelDate : null;
-		var mobilePhone = $scope.mobilePhone ? $scope.mobilePhone : null;
-		var email = $scope.email ? $scope.email : null;
 		var bookDate = new Date();
+		var travelDateString = $scope.travelDate.getDate() + "/" + ($scope.travelDate.getMonth() + 1) + "/" + $scope.travelDate.getFullYear().toString();
+		var bookDateString = bookDate.getDate() + "/" + (bookDate.getMonth() + 1) + "/" + bookDate.getFullYear().toString();
+		var firstName = $scope.firstName;
+		var lastName = $scope.lastName;
+		var fromCity = $scope.fromCity;
+		var toCity = $scope.toCity;
+		var mobilePhone = $scope.mobilePhone;
+		var email = $scope.email;
 		var paied = false;
+		var done = false;
+		var bankIban = $scope.bankIban;
 
 		//build object
 		$scope.passengers.$add({
@@ -33,11 +36,13 @@ angular.module('aBookingApp.booking', ['ngRoute', 'firebase'])
 			lastName: lastName,
 			fromCity: fromCity,
 			toCity: toCity,
-			travelDate: travelDate,
+			travelDate: travelDateString,
 			mobilePhone: mobilePhone,
 			email: email,
-			bookDate: bookDate,
-			paied: paied
+			bookDate: bookDateString,
+			bankIban: bankIban,
+			paied: paied,
+			done: done
 		}).then(function(ref) {
 			var id = ref.key;
 			//clear form 
@@ -46,7 +51,7 @@ angular.module('aBookingApp.booking', ['ngRoute', 'firebase'])
 		});
 	}
 
-		// Clear $scope Fields
+	// Clear $scope Fields
 	function clearFields() {
 		$scope.firstName = '';
 		$scope.lastName = '';
@@ -55,19 +60,20 @@ angular.module('aBookingApp.booking', ['ngRoute', 'firebase'])
 		$scope.travelDate = '';
 		$scope.mobilePhone = '';
 		$scope.email = '';
+		$scope.bankIban = '';
 	}
 
 	$(document).ready(function() {
-        //fetch text file
-        $.get('text.txt', function(data) {
-            //split on new lines
-            var lines = data.split('\n');
-            var uniqStation = [];
-            $.each(lines, function(i, el) {
-                if ($.inArray(el, uniqStation) === -1 && el!=="") uniqStation.push(el);
-            });
-           	$scope.stations = uniqStation;
-        });
-    });
+		//fetch text file
+		$.get('text.txt', function(data) {
+			//split on new lines
+			var lines = data.split('\n');
+			var uniqStation = [];
+			$.each(lines, function(i, el) {
+				if ($.inArray(el, uniqStation) === -1 && el !== "") uniqStation.push(el);
+			});
+			$scope.stations = uniqStation;
+		});
+	});
 
 }]);

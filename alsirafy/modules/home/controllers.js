@@ -28,6 +28,15 @@ angular.module('BookingAdmin', [ 'firebase'])
 		} else {
 			record.paied = true;
 		}
-		$scope.passengers.$save(record).then(function(ref) { console.log('success') });
+		$scope.passengers.$save(record).then(function(ref) { });
+	}
+	$scope.isDone = function(passenger) {
+		var record = $scope.passengers.$getRecord(passenger.$id);
+		if (record.done) {
+			record.done = false;
+		} else {
+			record.done = true;
+		}
+		$scope.passengers.$save(record).then(function(ref) { });
 	}
 }]);
