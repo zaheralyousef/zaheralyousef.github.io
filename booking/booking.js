@@ -19,6 +19,7 @@ angular.module('aBookingApp.booking', ['ngRoute', 'firebase'])
 		
 		var bookDate = new Date();
 		var travelDateString = $scope.travelDate.getDate() + "/" + ($scope.travelDate.getMonth() + 1) + "/" + $scope.travelDate.getFullYear().toString();
+		var birthDateString = $scope.birthDate.getDate() + "/" + ($scope.birthDate.getMonth() + 1) + "/" + $scope.birthDate.getFullYear().toString();
 		var bookDateString = bookDate.getDate() + "/" + (bookDate.getMonth() + 1) + "/" + bookDate.getFullYear().toString();
 		var firstName = $scope.firstName;
 		var lastName = $scope.lastName;
@@ -37,6 +38,7 @@ angular.module('aBookingApp.booking', ['ngRoute', 'firebase'])
 			fromCity: fromCity,
 			toCity: toCity,
 			travelDate: travelDateString,
+			birthDate: birthDateString,
 			mobilePhone: mobilePhone,
 			email: email,
 			bookDate: bookDateString,
@@ -58,6 +60,7 @@ angular.module('aBookingApp.booking', ['ngRoute', 'firebase'])
 		$scope.fromCity = '';
 		$scope.toCity = '';
 		$scope.travelDate = '';
+		$scope.birthDate = '';
 		$scope.mobilePhone = '';
 		$scope.email = '';
 		$scope.bankIban = '';

@@ -10,7 +10,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-angular.module('BookingAdmin', [ 'firebase'])
+angular.module('BookingAdmin', ['firebase'])
 
 .controller('BookingAdminCtrl', ['$scope', '$firebaseArray', '$firebaseObject', function($scope, $firebaseArray, $firebaseObject) {
 	const ref = firebase.database().ref().child('passengers');
@@ -18,8 +18,11 @@ angular.module('BookingAdmin', [ 'firebase'])
 	//$scope.editFormShow = false;
 
 	$scope.removePassenger = function(passenger) {
-		$scope.passengers.$remove(passenger);
-		$scope.msg = 'Passenger Removed!';
+		var result = confirm("Are you sure to delete this item?");
+		if (result) {
+			$scope.passengers.$remove(passenger);
+			$scope.msg = 'Passenger Removed!';
+		}
 	}
 	$scope.isPaied = function(passenger) {
 		var record = $scope.passengers.$getRecord(passenger.$id);
@@ -28,7 +31,7 @@ angular.module('BookingAdmin', [ 'firebase'])
 		} else {
 			record.paied = true;
 		}
-		$scope.passengers.$save(record).then(function(ref) { });
+		$scope.passengers.$save(record).then(function(ref) {});
 	}
 	$scope.isDone = function(passenger) {
 		var record = $scope.passengers.$getRecord(passenger.$id);
@@ -37,6 +40,6 @@ angular.module('BookingAdmin', [ 'firebase'])
 		} else {
 			record.done = true;
 		}
-		$scope.passengers.$save(record).then(function(ref) { });
+		$scope.passengers.$save(record).then(function(ref) {});
 	}
 }]);

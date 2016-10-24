@@ -8,21 +8,25 @@
         <table class="table table-default table-striped table-wrapper">
             <thead>
                 <tr>
-                    <th><h5>First Name</h5></th>
-                    <th><h5>Last Name</h5></th>
-                    <th><h5>From</h5></th>
-                    <th><h5>To</h5></th>
-                    <th><h5>Travel Date</h5></th>
-                    <th><h5>Mobile</h5></th>
-                    <th><h5>E-mail</h5></th>
-                    <th><h5>Paied</h5></th>
-                    <th><h5>Done</h5></th>
+                    <th><h6>First Name</h6></th>
+                    <th><h6>Last Name</h6></th>
+                    <th><h6>Birth Date</h6></th>
+                    <th><h6>From</h6></th>
+                    <th><h6>To</h6></th>
+                    <th><h6>Travel Date</h6></th>
+                    <th><h6>Mobile</h6></th>
+                    <th><h6>E-mail</h6></th>
+                    <th><h6>Paied</h6></th>
+                    <th><h6>Done</h6></th>
+                    <th ng-hide="true"><h6>Booking Date</h6></th>
+                    <th><h6>Delete</h6></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="passenger in passengers | orderBy: 'bookDate' | filter:searchText">
+                <tr ng-repeat="passenger in passengers | orderBy: '-bookDate' | filter:searchText">
                     <td>{{passenger.firstName}}</td>
                     <td>{{passenger.lastName}}</td>
+                    <td>{{passenger.birthDate}}</td>
                     <td>{{passenger.fromCity}}</td>
                     <td>{{passenger.toCity}}</td>
                     <td>{{passenger.travelDate}}</td>
@@ -34,10 +38,12 @@
                     </td>
                     <td>
                         <!-- <a class="btn btn-success" ng-click="showEditForm(passenger)">Edit</a> -->
-                        <!-- <a class="btn btn-danger" ng-click="removePassenger(passenger)"><i class="fa fa-trash"></i></a> -->
+                       
                         <input ng-if="passenger.done" type="checkbox" ng-click="isDone(passenger);" checked>
                         <input ng-if="!passenger.done" type="checkbox" ng-click="isDone(passenger);" unchecked>
                     </td>
+                    <td ng-hide="true">{{passenger.bookDate}}</td>
+                    <td> <a class="btn btn-danger" ng-click="removePassenger(passenger)"><i class="fa fa-trash"></i></a></td>
                 </tr>
             </tbody>
         </table>
