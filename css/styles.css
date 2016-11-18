@@ -1,0 +1,101 @@
+body {
+    background-image: url("backgroundimg.jpg");
+    background-repeat: repeat;
+    background-color: #3399FF;
+    position: relative;
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.affix ~ .container-fluid {
+    position: relative;
+    top: 50px;
+}
+
+#homeButton {
+    margin-top: 3%;
+    position: center;
+    width: 20%
+}
+
+.page-wrapper {
+    display: block;
+    height: 100%;
+}
+
+.page-wrapper .home-section,
+.page-wrapper .about-section,
+.page-wrapper .portfolio-section,
+.page-wrapper .contact-section {
+    height: 600px;
+    transition: 2s;
+    left: 2185px;
+    top: 660px;
+}
+
+#head {
+    background-color: #bbb;
+    background-image: url(http://omniumcargo.dk/wp-content/uploads/2014/04/Logo-Silver-Tube-Header.jpg)
+}
+
+h2 {
+    font-family: Lobster, Monospace;
+}
+
+.thick-green-border {
+    border-style: soft;
+    border-radius: 40%;
+}
+
+.generalstyle {
+    padding-top: 10%;
+    padding-bottom: 30%;
+    height: 80%;
+    font-family: sans-serif, serif;
+    font-size: 150%;
+    font-weight: bold;
+    text-align: center;
+}
+
+#socialmedia {
+    font-size: 125%;
+    float: none;
+}
+
+.btn {
+    width: 100%;
+}
+
+.block {
+    padding-bottom: 20px;
+}
+
+.block img {
+    display: block;
+    float: right;
+    width: 100%;
+}
+
+#break {
+    height: 8%;
+    width: 100%;
+    margin: 4% 0% 4% 0%;
+}
+
+
+/*@media (max-width: 600px) {
+  .block img {
+    display: flex;
+    float: right;;
+    width: 30%;
+  }
+}
+*/
