@@ -1,86 +1,85 @@
-
-body{
-  color: #fff;
-  background-color:#000;
-  position: relative;
+.hermitage {
+    body {
+        color: #fff;
+        background-color: #000;
+        position: relative;
+    }
+    p {
+        text-align: left;
+        font-size: 130%;
+        letter-spacing: 1px;
+    }
+    .paragraph {
+        padding: 0% 5% 1% 7%;
+    }
+    .affix {
+        top: 0;
+        width: 100%;
+        z-index: 9999 !important;
+    }
+    .navbar {
+        margin-bottom: 0px;
+    }
+    .affix ~ .container-fluid {
+        position: relative;
+        top: 50px;
+    }
+    #homeButton {
+        margin-top: 3%;
+        position: center;
+        width: 20%
+    }
+    .page-wrapper {
+        display: block;
+        height: 100%;
+    }
+    .page-wrapper .home-section,
+    .page-wrapper .about-section,
+    .page-wrapper .portfolio-section,
+    .page-wrapper .contact-section {
+        height: 600px;
+        transition: 2s;
+        left: 2185px;
+        top: 660px;
+    }
+    #head {
+        background-color: #000;
+        color: #fff;
+    }
+    h1,
+    h2,
+    h3,
+    p {
+        font-family: sans-serif, serif;
+    }
+    .thick-green-border {
+        max-width: 125px;
+        max-height: 149px;
+        border-style: soft;
+        border-radius: 40%;
+    }
+    .generalstyle {
+        padding-top: 2%;
+        padding-bottom: 40%;
+        height: 100%;
+        font-family: sans-serif, serif;
+        font-size: 100%;
+        text-align: center;
+    }
+    #socialmedia {
+        font-size: 100%;
+    }
+    .block {
+        padding-bottom: 1% 10% 1% 10%;
+    }
+    .block img {
+        display: block;
+        width: 100%;
+        position: absolute;
+    }
+    #break {
+        height: 8%;
+        width: 100%;
+        margin: 4% 0% 4% 0%;
+    }
 }
-p{
-  text-align: left;
-  font-size: 130%;
-  letter-spacing: 1px;
-}
-.paragraph{
-  padding: 0% 5% 1% 7%;
-}
-.affix {
-    top:0;
-    width: 100%;
-    z-index: 9999 !important;
-}
-.navbar {
-    margin-bottom: 0px;
-}
-
-.affix ~ .container-fluid {
-   position: relative;
-   top: 50px;
-}
-#homeButton{
-  margin-top: 3%;
-  position: center;
-  width: 20%
-}
-.page-wrapper {
-    display: block;
-    height: 100%;
-}
-.page-wrapper .home-section,
-.page-wrapper .about-section,
-.page-wrapper .portfolio-section,
-.page-wrapper .contact-section{
-    height: 600px;
-    transition: 2s;
-    left: 2185px;
-	  top: 660px;
-}
-#head{
-  background-color:#000;
-  color: #fff;
-}
-h1, h2, h3, p {
-    font-family: sans-serif,serif;
-  }
-  .thick-green-border   {
-    max-width: 125px;
-    max-height: 149px;
-    border-style: soft;
-    border-radius: 40%;
-  }
-.generalstyle{
-  padding-top: 2%;
-  padding-bottom:40%;
-  height:100%;
-  font-family:sans-serif,serif;
-  font-size: 100%;
-  text-align: center;
-}
-#socialmedia {
-  font-size: 100%;
-}
-
-.block {
-  padding-bottom: 1% 10% 1% 10%;
-
-}
-
-.block img {
-  display: block;
-  width: 100%;
-  position:absolute;
-}
-#break{
-  height:8%;
-  width: 100%;
-  margin:4% 0% 4% 0%;
-}
-
